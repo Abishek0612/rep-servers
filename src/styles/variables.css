@@ -1,0 +1,53 @@
+:root {
+  /* Primary colors */
+  --color-purple: #7950bc;
+  --color-green: #39a065;
+  --color-yellow: #fcb638;
+  --color-dark-purple: #52328A;
+  --color-final-purple: #633DA0;
+  --color-blue: #5880a9;
+  /* --color-blue: bg-gradient-to-r from-purple-600 to-blue-600 */
+
+  /* Neutrals */
+  --color-black: #000000;
+  --color-dark-gray: #292e33;
+  --color-gray: #808894;
+  --color-light-gray: #dce4f1;
+  --color-white: #ffffff;
+
+  /* Theme-specific variables */
+  --color-background: var(--color-white);
+  --color-text: var(--color-black);
+  --color-primary: var(--color-final-purple);
+  --color-secondary: var(--color-green);
+  --color-accent: var(--color-yellow);
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --color-background: var(--color-black);
+  --color-text: var(--color-white);
+  --color-primary: var(--color-purple);
+}
+
+/* Calendar portal styles */
+#calendar-portal-root {
+  position: relative;
+  z-index: 99999;
+  pointer-events: none;
+}
+
+#calendar-portal-root > * {
+  pointer-events: auto;
+}
+
+/* Ensure calendar doesn't interfere with scrolling */
+body.calendar-open {
+  overflow: auto;
+}
+
+/* Fix for any overflow issues */
+.document-filters-container {
+  position: relative;
+  overflow: visible !important;
+}
